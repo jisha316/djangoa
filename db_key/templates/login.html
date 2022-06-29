@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+{% block content %}
+<!-- <h1 style="margin-top: 20%;">
+    login********************
+</h1> -->
+
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        {% for message in messages %}
+        <h5>
+            <div class="alert alert-danger mt-5">
+                {{ message }}
+            </div>
+        </h5>
+            {% endfor %}
+    </div>
+    <div class="col-md-4"></div>
+</div>
+
+<div style="background-color: rgba(0,0,0,0.5); margin-left: 400px; margin-right: 400px; margin-top: 50px;">
+    <center>
+        <h1 style="color: white;">
+            Log In Here..
+        </h1>
+    </center>
+    <center>
+        <form method='post' class='post-form' action="{% url 'login' %}" style="width: 50%;">
+            {% csrf_token %}
+    
+            <input type="text" name="username" placeholder="User Name" style="width: 100%;"><br><br>
+            <input type="password" name="password" placeholder="Password" style="width: 100%;"><br><br>
+            <button type="submit" class='btn btn-outline-danger'>Submit</button><br><br>
+        </form>
+    </center>
+    
+</div>
+
+
+{% endblock %}

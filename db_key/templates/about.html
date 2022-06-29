@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous"> 
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto:ital,wght@0,100;1,900&family=Water+Brush&display=swap" rel="stylesheet">
+    
+        <title>Document</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark">            
+    <a style="font-family: 'Water Brush', cursive;" class="navbar-brand" href="#">College MS</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'course_page' %}">Add Course</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'student_page'%}">Add Student</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'show'%}">Show Details</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'logout_page'%}">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-fluid"
+  style="margin-top:10%;">
+      <div class="container bg-light">
+          {% for  msg in messages %}
+          <h1 style="color: blueviolet; text-align:center;">{{ msg }}</h1>
+          {% endfor %}
+          
+          <p>A student management system can mean several different things. However, context clues give away that this software is for managing students. But handling students can mean many things. So what really is a student management system?
+
+            A Student Management System is also known as a Student Information System (SIS). These systems work to coordinate scheduling and communications between faculty regarding students. This system exists to simplify information tracking for both parents and administrative staff.  </p>
+
+            <img src="{% static 'images/laptop.jpg' %}"
+            width="100%" height="10%">
+          
+      </div>
+      <!-- <div class="row mt-3">
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
+              <a href="{% url 'logout' %}" rol="button" class="btn btn-info w-100">*LOG OUT*</a>
+          </div>
+          <div class="col-md-4"></div>
+      </div> -->
+  </div>
+</body>
+</html>

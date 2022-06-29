@@ -1,0 +1,63 @@
+{% extends 'index.html' %}
+{% block content %}
+<!-- <style>
+    body{
+        background-color: aqua;
+    }
+</style>
+<h1 style="margin-top: 20%;">
+    Signup................
+</h1> -->
+
+<div class="nav bg-info">
+
+</div>
+<div class="container">
+    {% for message in messages %}
+<h5>
+    <div class="alert alert-danger mt-5" style="width: 50%;">
+        {{ message }}
+    </div>
+</h5>
+    {% endfor %}
+</div>
+
+<div style="background-color: rgba(0,0,0,0.5); margin-left: 400px; margin-right: 400px; margin-top: 50px;">
+    <center>
+        <h1 style="color: white;">Signup here...</h1>
+    </center>
+    <center>
+        <form action="{% url 'usercreate' %}" method="post" class='post-form' style="width: 50%;">
+        <!-- <form method='post' class='post-form' action="{% url 'login' %}" style="width: 50%;"> -->
+            {% csrf_token %}
+            <input type="text" name="first_name" placeholder="First Name" style=" width: 100%; border: none; border-bottom: 2px solid white;"><br><br>
+            <input type="text" name="last_name" placeholder="Last Name" style="width: 100%;"><br><br>
+            <input type="text" name="username" placeholder="Username" style="width: 100%;"><br><br>
+            <input type="email" name="email" placeholder="Email" style="width: 100%;"><br><br>
+            <input type="password" name="password" placeholder="Strong Password" style="width: 100%;"><br><br>
+            <input type="password" name="cpassword" placeholder="Conform Password" style="width: 100%;"><br><br>
+            <button type="submit" class='btn btn-outline-success'>Submit</button><br><br>
+            <p class='text-white'>Already a member. <a href="#">Login</a></p>
+
+        </form>
+    </center>
+</div>
+
+
+<!-- <div class="container bg-light" style="border-radius: 10px; width:50%">
+   <form action="{% url 'usercreate' %}" method="post" class="form pt-5 pb-5" style="width: 50%; margin-left:25%">
+       {% csrf_token %}
+
+       <input type="text" name="first_name" class="form-control" placeholder="First Name"><br>
+       <input type="text" name="last_name"class="form-control" placeholder="Last Name"><br>
+       <input type="text" name="username" class="form-control" placeholder="Username"><br>
+       <input type="email" name="email" class="form-control" placeholder="Email"><br>
+       <input type="password" name="password" class="form-control" placeholder="Strong Password"><br>
+       <input type="password" name="cpassword" class="form-control" placeholder="Conform Password"><br>
+       
+       <button type="submit" class="btn btn-outline-info" style="margin-left: 40%;">Submit</button>
+       <br>
+       <p class='text-muted'>Already a member. <a href="#">Login</a></p> -->
+   <!-- </form>
+</div> -->
+{% endblock %}
